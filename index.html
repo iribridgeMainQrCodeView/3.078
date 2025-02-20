@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html dir="ltr" ng-app="IRIBridgeApp">
+<head>
+
+    <link href=IRI_Logo.png rel="icon" type="image/png" />
+    <meta name="viewport" content="width=device-width" />
+    
+
+
+
+    <!--New code added in 03-02-2020 for auto refresh page-->
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <link href=dataTables.bootstrap.min.css rel="stylesheet" />
+    <link href=dataTables.responsive.css rel="stylesheet" />
+    <link href=angular-block-ui.min.css rel="stylesheet" />
+
+    <link href="font-awesome.min.css" rel="stylesheet" />
+    <link href=angular-datatables.min.css rel="stylesheet" />
+
+    <link href=bootstrap.css rel="stylesheet" type="text/css" />
+    <link href=customize.css rel="stylesheet" type="text/css" />
+    <link href="jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <title>QrCodeView</title>
+</head>
+<body id="bdy" ng-controller="BaseCtrl" ng-cloak>
+   
+
+    
+    
+    <div>
+        <header class="navbar navbar-fixed-top" id="header">
+            <div class="navbar-inner">
+                <div class="container-fluid medium">
+                    <div class="row-fluid" style="padding: 0;">
+                        <div class="col-md-6" id="w">
+                            <div class=" ">
+                                <div class="logo">
+                                    <img alt="" class="img-responsive" src=IRI_Logo.png />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="name">
+                                    <img alt="" class="img-responsive" src=IRI_3lang.png />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bridge">
+                            <img alt="" class="img-responsive" src=BridgeLogo.png />
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </header>
+        <section class="main clear-top">
+            <!--Container-->
+            <div class="container" style="width: 80%">
+                <!--row-fluids-->
+                <div class="row">
+                    
+                    <div id="masterMessage"></div>
+                    <div>
+<div class="mobile">
+    <div class="row">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <p class="title" style="font-family: 'Times New Roman', Times, serif;"> IRI's Documents Verification</p>
+                        </div>
+                    </div>
+                </h4>
+            </div>
+        </div>
+
+        
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="font-family: 'Times New Roman', Times, serif;">
+                    General Information
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="tableSearchMobile">
+                    <table class="table table-condensed table-responsive table-striped table-hover GeneralInformation">
+
+                        <tbody data-ng-repeat="op in QRoutputList" ng-if="op.TypeOrder =='A'">
+                            <tr>
+                                <th>Document Name</th>
+                                <td>شهادة مطابقة</td>
+                            </tr>
+                            <tr>
+                                <th>IRI Reference</th>
+                                <td>27030&nbsp;/&nbsp;2025</td>
+                            </tr>
+                            <tr>
+                                <th>Issue Date</th>
+                                <td>17/10/2025</td>
+                            </tr>
+                            <tr>
+                                <th>Importer  </th>
+                                <td>trade and more TAM</td>
+                            </tr>
+                            <tr>
+                                <th>Freight Forwarder</th>
+                                <td>خالد قاسم يوسف</td>
+                            </tr>
+                            <tr>
+                                <th> Customs(Ref/Date) </th>
+                                <td>400 / 2025 &nbsp;&nbsp; 03/11/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+       <!-- <div class="panel panel-default" ng-show="QRoutputList[0].FieldQ=='1'">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="font-family: 'Times New Roman', Times, serif;">
+                    Sampling Information
+                </h4>
+            </div>
+            <div class="panel-body">
+
+                <div class="tableSearchMobile" data-ng-repeat="op in QRoutputList" ng-if="op.TypeOrder =='B'" style="margin-block-end:5px">
+                    <table class="table table-condensed table-responsive table-striped table-hover GeneralInformation">
+                        <tbody>
+                            <tr>
+                                <th>Inspection Date</th>
+                                <td>30/09-2024</td>
+                            </tr>
+                            <tr>
+                                <th>Inspected Sample</th>
+                                <td>BALEA SHAMPOO</td>
+                            </tr>
+                            <tr>
+                                <th>Quantity</th>
+                                <td>90.00 box</td>
+                            </tr>
+                            <tr>
+                                <th>Decree</th>
+                                <td>11497</td>
+                            </tr>
+                            <tr>
+                                <th>Result</th>
+                                <td>مطابق</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+
+        
+
+       <!-- <div class="panel panel-default" ng-show="QRoutputList[0].FieldQ=='2'">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="font-family: 'Times New Roman', Times, serif;">
+                    Sampling Information
+                </h4>
+            </div>
+            <div class="panel-body">
+
+                <div class="tableSearchMobile" data-ng-repeat="op in QRoutputList" ng-if="op.TypeOrder =='C'" style="margin-block-end:5px">
+                    <table class="table table-condensed table-responsive table-striped table-hover GeneralInformation">
+                        <tbody>
+                            <tr>
+                                <th>Inspection Date</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Inspected Sample</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Decree</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Quantity</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Initial Result  </th>
+                                <td></td>
+                            </tr>
+                          
+                            <tr>
+                                <th>Correction Posibility</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Required Correction</th>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+
+
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="font-family: 'Times New Roman', Times, serif;">
+                    Conclusion
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="tableSearchMobile" style="margin-top:10px">
+                    <table class="table table-condensed table-responsive table-striped table-hover GeneralInformation">
+
+                        <tbody data-ng-repeat="op in QRoutputList" ng-if="op.TypeOrder =='A'">
+                            <tr>
+                                <th colspan="2" style="text-align:right; font-size:40px"> بعد القيام بإجراءات تقييم المطابقة للإرسالية المحددة اوصافها أعلاه، يفيد معهد البحوث الصناعية بأن البضاعة الخاضعة لأحكام المراسيم الإلزامية الخاصة به جاءت مطابقة لمتطلبات المواصفات ذات الصلة
+
+
+
+
+                                </th>
+
+                            </tr>
+                            <tr style="height:2px;">
+
+                                <td> &nbsp;&nbsp;</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
+    <div id="wrap">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-sm-6 text-left" style="font-family: 'Times New Roman', Times, serif;">
+                            IRI Reference : 3.056
+                        </div>
+                        <div class="col-sm-4 text-left" style="font-family: 'Times New Roman', Times, serif;">
+                            Registered on : مرفأ بيروت
+                        </div>
+                    </div>
+                </h4>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="font-family: 'Times New Roman', Times, serif;">
+                    General Information
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="tableSearch">
+                    <table class="table table-condensed table-responsive table-striped table-hover GeneralInformation">
+
+                        <tbody data-ng-repeat="op in QRoutputList" ng-if="op.TypeOrder =='A'">
+                            <tr>
+                                <th><p>Importer</p></th>
+                                <td>trade and more TAM</td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Freight Forwarder</th>
+                                <td>خالد قاسم يوسف</td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Location Of Goods</th>
+                                <td>مرفأ بيروت</td>
+                                <th>Customs Reference</th>
+                                <td>03/11/2025</td>
+                            </tr>
+                            <tr>
+                                <th>Customs Date</th>
+                                <td>27030 / 2025</td>
+
+                                <th>Issue Number</th>
+                                <td>400 / 2025</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="push"></div>
+    <footer>
+        <section id="bottom">
+            <!--Container-->
+            <div class="container" style="width: 80%">
+                <!--row-fluids-->
+                <div class="row">
+                    <!--Contact Form-->
+                    <div class="flip col-sm-5">
+                        <br />
+                        <h4>
+                            Address
+                        </h4>
+                        <ul class="list-unstyled address">
+                            <li><i class="fa fa-home"></i><strong>Address:</strong> Lebanese University Campus Hadatt (Baabda)</li>
+                            <li><i class="fa fa-envelope"></i><strong>Email: </strong>support@iri.org.lb </li>
+                            <li><i class="fa fa-globe"></i><strong>Website:</strong> www.iri.org.lb </li>
+                            <li><i class="fa fa-phone"></i><strong>Phone / Fax :</strong> +961 (5) 467831 </li>
+                        </ul>
+                    </div>
+                    <div class="flip col-sm-7">
+                        <br />
+                        <h4>
+                             About Bridge
+                        </h4>
+                        <div class="col-sm-10 footerAbout">
+                            <p>
+                                Bridge software in developed in 2014 by IRI development team, and is used by both IRI stuff and clearing agents and importers for registering their files and planning their inspections, and for tracking the overall process from registration till delivery of certificates. Payment online is also available on the system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="footer">
+            <div class="container" style="width: 80%">
+                <div class="row-fluid">
+                    <div class="col-md-5 cp flip">
+                        &copy;  2015 Industrial Research Institute. All Rights Reserved.
+                    </div>
+                    <!--/Copyright-->
+                    <div class="col-sm-6 flip">
+                        <ul class="social pull-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-1 flip">
+                        <a id="gototop" class="gototop pull-right" href="#">
+                            <i class="fa fa-angle-up"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
